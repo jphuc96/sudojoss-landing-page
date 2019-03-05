@@ -3,6 +3,6 @@ RUN mkdir /app
 ADD . /app
 WORKDIR /app
 RUN go build -o main .
+VOLUME /app
 EXPOSE 8081
-VOLUME [ "/app" ]
 CMD [ "/app/main" ]
