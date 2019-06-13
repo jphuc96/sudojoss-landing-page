@@ -1,0 +1,31 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: sudojoss
+  labels:
+    app: sudojoss
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: sudojoss
+    spec:
+      containers:
+        - name: sudojoss
+          image: jphuc96/sudojoss-landing-page:latest
+          ports:
+            - containerPort: 80
+          resources: {}
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: sudojoss
+spec:
+  selector:
+    app: sudojoss
+  ports:
+  - name: '80'
+    port: 80
+    targetPort: 80
