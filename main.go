@@ -24,7 +24,7 @@ func main() {
 	// })
 	// http.HandleFunc("/increment", incrementCounter)
 	http.Handle("/", http.FileServer(http.Dir("./html5up-identity")))
-        fmt.Println("Listening on 0.0.0.0:80")
-	log.Fatal(http.ListenAndServe("0.0.0.0:80", nil))
+	fmt.Println("Listening on 0.0.0.0:8080")
+	log.Fatal(http.ListenAndServe("0.0.0.0:8080", nil))
 
 }

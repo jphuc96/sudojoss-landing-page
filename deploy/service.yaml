@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: sudojoss
+spec:
+  selector:
+    app: sudojoss
+  ports:
+  - name: http
+    port: 8080
+    targetPort: 8080

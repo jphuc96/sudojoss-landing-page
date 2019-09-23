@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: sudojoss
+  annotations:
+    kubernetes.io/ingress.class: traefik
+spec:
+  rules:
+  - host: sudojoss.com
+    http:
+      paths:
+        - path: /
+          backend:
+            serviceName: sudojoss
+            servicePort: 8080
+  - host: www.sudojoss.com
+    http:
+      paths:
+        - path: /
+          backend:
+            serviceName: sudojoss
+            servicePort: 8080

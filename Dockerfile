@@ -9,5 +9,5 @@ WORKDIR /app
 COPY ./html5up-identity ./html5up-identity
 COPY --from=builder /app/main .
 VOLUME /app
-EXPOSE 80
+EXPOSE 8080
 CMD [ "/app/main" ]
